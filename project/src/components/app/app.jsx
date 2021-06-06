@@ -1,7 +1,15 @@
 import React from 'react';
-
-function App() {
-  return <p>Hello, world!</p>;
+import Main from '../main/main';
+import PropTypes from 'prop-types';
+export default function App({ cards = [] }) {
+  return <Main cards={cards} />;
 }
 
-export default App;
+App.propTypes = {
+  cards: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      title: PropTypes.string.isRequired,
+    }),
+  ),
+};
