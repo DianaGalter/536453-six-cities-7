@@ -9,7 +9,27 @@ import NotFound from '../notfound/notfound';
 
 import PropTypes from 'prop-types';
 export default function App({ cards = [] }) {
-  return <Main cards={cards} />;
+  return (
+    <BrowserRouter>
+      <Switch>
+        <Route exact path={AppRoute.MAIN}>
+          <Main cards={cards} />
+        </Route>
+        <Route exact path={AppRoute.SIGNIN}>
+          <SignIn />
+        </Route>
+        <Route exact path={AppRoute.FAVORITES}>
+          <Favorites />
+        </Route>
+        <Route exact path={AppRoute.ROOM}>
+          <Room />
+        </Route>
+        <Route>
+          <NotFound />
+        </Route>
+      </Switch>
+    </BrowserRouter>
+  );
 }
 
 App.propTypes = {
