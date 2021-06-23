@@ -6,14 +6,16 @@ import SignIn from '../signin/sing-in';
 import Favorites from '../favorites/favorites';
 import Room from '../room/room';
 import NotFound from '../notfound/not-found';
-
+import offersPropTypes from '../offers/offers.prop';
+import { offers } from '../../mocks/offers.js';
 import PropTypes from 'prop-types';
+
 export default function App({ cards = [] }) {
   return (
     <BrowserRouter>
       <Switch>
         <Route exact path={AppRoute.MAIN}>
-          <Main cards={cards} />
+          <Main cards={cards} offers={offers}/>
         </Route>
         <Route exact path={AppRoute.SIGNIN}>
           <SignIn />
