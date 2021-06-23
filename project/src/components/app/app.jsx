@@ -2,10 +2,10 @@ import React from 'react';
 import {Switch, Route, BrowserRouter} from 'react-router-dom';
 import {AppRoute} from '../../const.js';
 import Main from '../main/main';
-import SignIn from '../signin/singin';
+import SignIn from '../signin/sing-in';
 import Favorites from '../favorites/favorites';
 import Room from '../room/room';
-import NotFound from '../notfound/notfound';
+import NotFound from '../notfound/not-found';
 
 import PropTypes from 'prop-types';
 export default function App({ cards = [] }) {
@@ -39,4 +39,5 @@ App.propTypes = {
       title: PropTypes.string.isRequired,
     }),
   ),
+  offers: offersPropTypes,
 };

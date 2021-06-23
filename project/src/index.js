@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './components/app/app';
+import offers from './mocks/offers.js';
 
 const cards = [
   {
@@ -26,7 +27,7 @@ const cards = [
 ];
 ReactDOM.render(
   <React.StrictMode>
-    <App cards={cards} />
+    <App cards={cards} offers={offers}/>
   </React.StrictMode>,
   document.getElementById('root'),
 );
