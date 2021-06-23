@@ -7,10 +7,10 @@ import Favorites from '../favorites/favorites';
 import Room from '../room/room';
 import NotFound from '../notfound/not-found';
 import offersPropTypes from '../offers/offers.prop';
-import { offers } from '../../mocks/offers.js';
+import cardsPropTypes from '../card/card.prop';
 import PropTypes from 'prop-types';
 
-export default function App({ cards = [] }) {
+export default function App({ cards = [], offers }) {
   return (
     <BrowserRouter>
       <Switch>
@@ -35,11 +35,6 @@ export default function App({ cards = [] }) {
 }
 
 App.propTypes = {
-  cards: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.number.isRequired,
-      title: PropTypes.string.isRequired,
-    }),
-  ),
+  cards: PropTypes.arrayOf(cardsPropTypes),
   offers: offersPropTypes,
 };
