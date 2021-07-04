@@ -1,5 +1,6 @@
 import React from 'react';
 import offersPropTypes from '../offers/offers.prop';
+import {Link} from 'react-router-dom';
 
 export default function Card(props) {
   const {offers} = props;
@@ -39,7 +40,7 @@ export default function Card(props) {
           </div>
         </div>
         <h2 className="place-card__name">
-          <a href="/#">{offers.title}</a>
+          <Link to={`/offer/${offers.id}`}>{offers.title}</Link>
         </h2>
         <p className="place-card__type">{offers.type}</p>
       </div>

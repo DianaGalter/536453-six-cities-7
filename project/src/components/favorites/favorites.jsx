@@ -1,5 +1,6 @@
 import React from 'react';
 import offersPropTypes from '../offers/offers.prop';
+import {Link} from 'react-router-dom';
 
 export default function Favorites(props) {
   const {offers} = props;
@@ -100,7 +101,7 @@ export default function Favorites(props) {
                           </div>
                         </div>
                         <h2 className='place-card__name'>
-                          <a xlinkHref='#'>{offer.title}</a>
+                          <Link to={`/offer/${offer.id}`}>{offer.title}</Link>
                         </h2>
                         <p className='place-card__type'>{offer.type}</p>
                       </div>
