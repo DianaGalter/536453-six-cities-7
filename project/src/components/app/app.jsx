@@ -7,15 +7,13 @@ import Favorites from '../favorites/favorites';
 import Room from '../room/room';
 import NotFound from '../notfound/not-found';
 import offersPropTypes from '../offers/offers.prop';
-import cardsPropTypes from '../card/card.prop';
-import PropTypes from 'prop-types';
 
-export default function App({ cards = [], offers }) {
+export default function App({ offers }) {
   return (
     <BrowserRouter>
       <Switch>
         <Route exact path={AppRoute.MAIN}>
-          <Main cards={cards} offers={offers}/>
+          <Main offers={offers}/>
         </Route>
         <Route exact path={AppRoute.SIGNIN}>
           <SignIn />
@@ -35,6 +33,5 @@ export default function App({ cards = [], offers }) {
 }
 
 App.propTypes = {
-  cards: PropTypes.arrayOf(cardsPropTypes),
   offers: offersPropTypes,
 };

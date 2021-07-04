@@ -1,8 +1,9 @@
 import React from 'react';
-import Card from '../card/card';
-import PropTypes from 'prop-types';
+import OffersList from '../offers/offer-list';
+import offersPropTypes from '../offers/offers.prop';
+import {Link} from 'react-router-dom';
 
-export default function Main({ cards }) {
+export default function Main({ offers }) {
   return (
     <div className="page page--gray page--main">
       <header className="header">
@@ -22,15 +23,16 @@ export default function Main({ cards }) {
             <nav className="header__nav">
               <ul className="header__nav-list">
                 <li className="header__nav-item user">
-                  <a
+                  <Link
                     className="header__nav-link header__nav-link--profile"
+                    to="/favorites"
                     href="/#"
                   >
                     <div className="header__avatar-wrapper user__avatar-wrapper"></div>
                     <span className="header__user-name user__name">
                       Oliver.conner@gmail.com
                     </span>
-                  </a>
+                  </Link>
                 </li>
                 <li className="header__nav-item">
                   <a className="header__nav-link" href="/#">
@@ -113,9 +115,7 @@ export default function Main({ cards }) {
                 </ul>
               </form>
               <div className="cities__places-list places__list tabs__content">
-                {cards.map((card) => (
-                  <Card key={`${card.title}-${card.id}`} />
-                ))}
+                <OffersList offers={offers.slice(0, 4)} />
               </div>
             </section>
             <div className="cities__right-section">
@@ -129,10 +129,5 @@ export default function Main({ cards }) {
 }
 
 Main.propTypes = {
-  cards: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.number.isRequired,
-      title: PropTypes.string.isRequired,
-    }),
-  ),
+  offers: offersPropTypes,
 };

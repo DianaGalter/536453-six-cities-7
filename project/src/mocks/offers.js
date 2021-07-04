@@ -1,5 +1,5 @@
 const AVATAR_URL = 'https://i.pravatar.cc/128';
-export const offers = [
+const offers = [
   {
     bedrooms: 3,
     city: {
@@ -137,3 +137,5 @@ export const offers = [
     type: 'apartment',
   },
 ];
+
+export default offers;
