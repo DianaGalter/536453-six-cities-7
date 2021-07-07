@@ -2,6 +2,7 @@ import React from 'react';
 import OffersList from '../offers/offer-list';
 import offersPropTypes from '../offers/offers.prop';
 import {Link} from 'react-router-dom';
+import Map from '../map/map';
 
 export default function Main({ offers }) {
   return (
@@ -119,7 +120,7 @@ export default function Main({ offers }) {
               </div>
             </section>
             <div className="cities__right-section">
-              <section className="cities__map map"></section>
+              <Map offers={offers} />
             </div>
           </div>
         </div>
