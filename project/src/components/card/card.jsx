@@ -1,5 +1,5 @@
 import React from 'react';
-import offersPropTypes from '../offers/offers.prop';
+import offerPropTypes from '../offers/offer.prop';
 import {Link} from 'react-router-dom';
 
 export default function Card(props) {
@@ -49,5 +49,5 @@ export default function Card(props) {
 }
 
 Card.propTypes = {
-  offers: offersPropTypes,
+  offers: offerPropTypes,
 };

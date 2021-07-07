@@ -115,7 +115,7 @@ export default function Main({ offers }) {
                 </ul>
               </form>
               <div className="cities__places-list places__list tabs__content">
-                <OffersList offers={offers.slice(0, 4)} />
+                <OffersList offers={offers} />
               </div>
             </section>
             <div className="cities__right-section">
