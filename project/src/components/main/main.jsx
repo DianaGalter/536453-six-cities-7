@@ -2,6 +2,7 @@ import React from 'react';
 import OffersList from '../offers/offer-list';
 import offersPropTypes from '../offers/offers.prop';
 import {Link} from 'react-router-dom';
+import Map from '../map/map';
 
 export default function Main({ offers }) {
   return (
@@ -115,11 +116,11 @@ export default function Main({ offers }) {
                 </ul>
               </form>
               <div className="cities__places-list places__list tabs__content">
-                <OffersList offers={offers.slice(0, 4)} />
+                <OffersList offers={offers} />
               </div>
             </section>
             <div className="cities__right-section">
-              <section className="cities__map map"></section>
+              <Map offers={offers} />
             </div>
           </div>
         </div>

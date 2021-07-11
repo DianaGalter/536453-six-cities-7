@@ -2,7 +2,7 @@ import React from 'react';
 import {Switch, Route, BrowserRouter} from 'react-router-dom';
 import {AppRoute} from '../../const.js';
 import Main from '../main/main';
-import SignIn from '../signin/sing-in';
+import SignIn from '../signin/sign-in';
 import Favorites from '../favorites/favorites';
 import Room from '../room/room';
 import NotFound from '../notfound/not-found';

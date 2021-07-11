@@ -6,37 +6,37 @@ export default function Favorites(props) {
   const {offers} = props;
 
   return (
-    <div className='page'>
-      <header className='header'>
-        <div className='container'>
-          <div className='header__wrapper'>
-            <div className='header__left'>
-              <a className='header__logo-link' xlinkHref='#'>
+    <div className="page">
+      <header className="header">
+        <div className="container">
+          <div className="header__wrapper">
+            <div className="header__left">
+              <a className="header__logo-link" xlinkHref="#">
                 <img
-                  className='header__logo'
-                  src='img/logo.svg'
-                  alt='6 cities logo'
-                  width='81'
-                  height='41'
+                  className="header__logo"
+                  src="img/logo.svg"
+                  alt="6 cities logo"
+                  width="81"
+                  height="41"
                 />
               </a>
             </div>
-            <nav className='header__nav'>
-              <ul className='header__nav-list'>
-                <li className='header__nav-item user'>
+            <nav className="header__nav">
+              <ul className="header__nav-list">
+                <li className="header__nav-item user">
                   <a
-                    className='header__nav-link header__nav-link--profile'
-                    xlinkHref='#'
+                    className="header__nav-link header__nav-link--profile"
+                    xlinkHref="#"
                   >
-                    <div className='header__avatar-wrapper user__avatar-wrapper'></div>
-                    <span className='header__user-name user__name'>
+                    <div className="header__avatar-wrapper user__avatar-wrapper"></div>
+                    <span className="header__user-name user__name">
                       Oliver.conner@gmail.com
                     </span>
                   </a>
                 </li>
-                <li className='header__nav-item'>
-                  <a className='header__nav-link' xlinkHref='#'>
-                    <span className='header__signout'>Sign out</span>
+                <li className="header__nav-item">
+                  <a className="header__nav-link" xlinkHref="#">
+                    <span className="header__signout">Sign out</span>
                   </a>
                 </li>
               </ul>
@@ -45,65 +45,65 @@ export default function Favorites(props) {
         </div>
       </header>
 
-      <main className='page__main page__main--favorites'>
-        <div className='page__favorites-container container'>
-          <section className='favorites'>
-            <h1 className='favorites__title'>Saved listing</h1>
-            <ul className='favorites__list'>
-              <li className='favorites__locations-items'>
-                <div className='favorites__locations locations locations--current'>
-                  <div className='locations__item'>
-                    <a className='locations__item-link' xlinkHref='#'>
+      <main className="page__main page__main--favorites">
+        <div className="page__favorites-container container">
+          <section className="favorites">
+            <h1 className="favorites__title">Saved listing</h1>
+            <ul className="favorites__list">
+              <li className="favorites__locations-items">
+                <div className="favorites__locations locations locations--current">
+                  <div className="locations__item">
+                    <a className="locations__item-link" xlinkHref="#">
                       <span>Amsterdam</span>
                     </a>
                   </div>
                 </div>
-                <div className='favorites__places'>
+                <div className="favorites__places">
                   {offers.map((offer) => (
-                    <article className='favorites__card place-card' key={`${offer.title}-${offer.id}`}>
-                      <div className='favorites__image-wrapper place-card__image-wrapper'>
-                        <a xlinkHref='/#'>
+                    <article className="favorites__card place-card" key={`${offer.title}-${offer.id}`}>
+                      <div className="favorites__image-wrapper place-card__image-wrapper">
+                        <a xlinkHref="/#">
                           <img
-                            className='place-card__image'
+                            className="place-card__image"
                             src={offer.previewImage}
-                            width='150'
-                            height='110'
-                            alt='Place'
+                            width="150"
+                            height="110"
+                            alt="Place"
                           />
                         </a>
                       </div>
-                      <div className='favorites__card-info place-card__info'>
-                        <div className='place-card__price-wrapper'>
-                          <div className='place-card__price'>
-                            <b className='place-card__price-value'>&euro;{offers.price}</b>
-                            <span className='place-card__price-text'>
+                      <div className="favorites__card-info place-card__info">
+                        <div className="place-card__price-wrapper">
+                          <div className="place-card__price">
+                            <b className="place-card__price-value">&euro;{offers.price}</b>
+                            <span className="place-card__price-text">
                               &#47;&nbsp;night
                             </span>
                           </div>
                           <button
-                            className='place-card__bookmark-button place-card__bookmark-button--active button'
-                            type='button'
+                            className="place-card__bookmark-button place-card__bookmark-button--active button"
+                            type="button"
                           >
                             <svg
-                              className='place-card__bookmark-icon'
-                              width='18'
-                              height='19'
+                              className="place-card__bookmark-icon"
+                              width="18"
+                              height="19"
                             >
-                              <use xlinkHref='#icon-bookmark'></use>
+                              <use xlinkHref="#icon-bookmark"></use>
                             </svg>
-                            <span className='visually-hidden'>In bookmarks</span>
+                            <span className="visually-hidden">In bookmarks</span>
                           </button>
                         </div>
-                        <div className='place-card__rating rating'>
-                          <div className='place-card__stars rating__stars'>
+                        <div className="place-card__rating rating">
+                          <div className="place-card__stars rating__stars">
                             <span style={{width: `${offer.rating*20}%`}}></span>
-                            <span className='visually-hidden'>Rating</span>
+                            <span className="visually-hidden">Rating</span>
                           </div>
                         </div>
-                        <h2 className='place-card__name'>
+                        <h2 className="place-card__name">
                           <Link to={`/offer/${offer.id}`}>{offer.title}</Link>
                         </h2>
-                        <p className='place-card__type'>{offer.type}</p>
+                        <p className="place-card__type">{offer.type}</p>
                       </div>
                     </article>
                   ))}
@@ -113,14 +113,14 @@ export default function Favorites(props) {
           </section>
         </div>
       </main>
-      <footer className='footer container'>
-        <a className='footer__logo-link' xlinkHref='main.html'>
+      <footer className="footer container">
+        <a className="footer__logo-link" xlinkHref="main.html">
           <img
-            className='footer__logo'
-            src='img/logo.svg'
-            alt='6 cities logo'
-            width='64'
-            height='33'
+            className="footer__logo"
+            src="img/logo.svg"
+            alt="6 cities logo"
+            width="64"
+            height="33"
           />
         </a>
       </footer>

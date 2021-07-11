@@ -11,7 +11,7 @@ export default function OfferList (props) {
   }
 
   return (offers.map((offer, i) => (
-    <Card key={`${offer.title}-${offer.id}`} offers={offers[i]} />
+    <Card key={`${offer.title}-${offer.id}`} offers={offer} />
   )));
 }
 
